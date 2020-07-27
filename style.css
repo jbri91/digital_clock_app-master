@@ -10,14 +10,11 @@ body {
 
 header {
     border: solid red 10px;
-
 }
 
 .clock {
-    margin:100px 200px;
+    margin:100px auto;
     background-color: black;
-    padding: 0px;
-    width: 0 auto;
     text-align: center;
     font-size:50px;
     display:flex;
@@ -27,10 +24,15 @@ header {
 
 .date {
     border: solid red 10px;
+    margin: 0 0 0 auto;
+    padding: 0px 20px;
+
 }
 
 .time {
      border: solid red 10px;
+     margin: 0 auto 0 0;
+     padding: 0px 20px;
 }
 
 .settings {
@@ -39,11 +41,13 @@ header {
 
 .options {
     display:flex;
-    margin:100px 75px; 
+    margin:100px 300px;
 }
 
 .option {
  border: red solid 10px; 
  text-align: center;
- padding: 0 20px;   
+ padding: 0 20px; 
+ margin: 0 auto;
+}  
 }
