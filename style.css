@@ -8,16 +8,42 @@ body {
     
 }
 
-h1 {
-    background-color: red;
-    margin-bottom:-5px;
+header {
+    border: solid red 10px;
+
 }
-p {
 
-    border-color: white;
-    border-width: 5px;
-    border-style: solid;
+.clock {
+    margin:100px 200px;
+    background-color: black;
+    padding: 0px;
+    width: 0 auto;
+    text-align: center;
+    font-size:50px;
+    display:flex;
+    color: white;
+    font-style: italic;
+}
 
-    padding: 5px;
-    margin: 20px;
+.date {
+    border: solid red 10px;
+}
+
+.time {
+     border: solid red 10px;
+}
+
+.settings {
+    color: white;  
+}
+
+.options {
+    display:flex;
+    margin:100px 75px; 
+}
+
+.option {
+ border: red solid 10px; 
+ text-align: center;
+ padding: 0 20px;   
 }
