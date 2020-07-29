@@ -15,13 +15,11 @@ document.all[12].textContent = time;
 console.log(time);
 
 
-let i = 0;
+// let i = 0;
 
-function increment() {
-  i++;
+// function increment() {
+//   i++;
 //   console.log(i);
-}
+// }
 
-increment(setInterval(increment, 1000));
-
-console.log(increment(time));
+// setInterval(increment, 1000);
