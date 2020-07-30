@@ -2,15 +2,7 @@
 // Sets the date
 var today = new Date();
 var date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
-console.log(today);
-document.all[10].textContent = date;
-
-let i = 0;
-
-function increment() {
-  i++;
-  console.log(i);
-}
+document.getElementById('current_date').innerHTML = date;
 
 setInterval(increment, 1000);
 
@@ -20,17 +12,7 @@ setInterval(increment, 1000);
 function increment() {
 today = new Date();
 time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-document.all[12].textContent = time;
-console.log(time);
+document.getElementById('current_time').innerHTML = time;
 }
 
 
-
-// let i = 0;
-
-// function increment() {
-//   i++;
-//   console.log(i);
-// }
-
-// setInterval(increment, 1000);
