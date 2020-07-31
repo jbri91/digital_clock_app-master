@@ -1,59 +1,42 @@
+// Global Variable
+militaryTime = false;
+
 
 // Sets the date
 var today = new Date();
 var date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
 document.getElementById('current_date').innerHTML = date;
 
+function standardTime() {
+today = new Date();
+hours = today.getHours();
+if (hours < 0) {
+    hours + '1';
+}
+}
+
+
+
+function increment() {
+  today = new Date();  
+if (militaryTime == true) {
+    time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById('current_time').innerHTML = time;
+}
+    else {
+    time = today.getHours() - 12 + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById('current_time').innerHTML = time;
+}
+}
+
+
 // Sets the interval at 1000 ms
 setInterval(increment, 1000);
 
-// Sets the time
-//The function allows for the seconds to tick every 1000 ms.
-function increment() {
-today = new Date();
-time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-document.getElementById('current_time').innerHTML = time;
-}
-
-// document.addEventListener('click', function(e) {
-//     console.log(e)
-// });
-
-// document.addEventListener('click', function(e) {
-//     console.log(e)
-// });
-
+// Links to HTML button file
 const toggle = document.getElementById('toggle')
-console.log(toggle)
 
+// This is toggling the on and off for military vs standard time
 toggle.addEventListener('click', function() {
-        time = (today.getHours()-12) + ":" + today.getMinutes() + ":" + today.getSeconds();
-        document.getElementById('current_time').innerHTML = time;
+    militaryTime = !militaryTime;
     });
-
-
-
-
-
-
-    
-/*Very top-level element is 'document'.
-document.addEventListener ('keyup', function(e) {
-
-do something when button is cicked
-
-}) */
-
-
-/* To attach to lower-level elements, the elemnts must be first located 
-in the DOM so the event listener can be attached to it. You use get ElementById
-or any other slector to locate the element.
-
-Locating the element
-const button = document.getElementById('myButton')
-
-connecting an event listener to the element
-button.addEventListener('click', fucntion(e) {
-    do something when button is clicked
-// */
-
