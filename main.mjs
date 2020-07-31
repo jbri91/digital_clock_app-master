@@ -29,9 +29,14 @@ console.log(toggle)
 toggle.addEventListener('click', function() {
         time = (today.getHours()-12) + ":" + today.getMinutes() + ":" + today.getSeconds();
         document.getElementById('current_time').innerHTML = time;
-        });
+    });
 
 
+
+
+
+
+    
 /*Very top-level element is 'document'.
 document.addEventListener ('keyup', function(e) {
 
