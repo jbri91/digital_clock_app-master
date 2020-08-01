@@ -15,8 +15,15 @@ function increment() {
     minutes = today.getMinutes();
     seconds = today.getSeconds();
     today = new Date();
+
+// if (hours < 0) {
+//     hours = Math.abs(hours);       I tried to prevent a negative number from appearing.
+// }
 if (hours <10) {
     hours = '0' + hours;
+}
+if (hours = 0) {
+    hours = 0 + 1;                 /* I am trying to prevent the hours from being 0.*/
 }
 if (minutes < 10) {
     minutes = '0' + minutes;
@@ -31,7 +38,12 @@ if (militaryTime == true) {
     else {
     time = (hours -12) + ":" + minutes + ":" + seconds;
     document.getElementById('current_time').innerHTML = time;
-} }
+} /*I am trying to prevent a negative number from appearing when it is 11 military time */
+if (militaryTime == false && hours < 0) {       
+    hours = Math.abs(hours);
+}
+
+}
 
 
 // // Sets the interval at 1000 ms
@@ -44,5 +56,6 @@ const toggle = document.getElementById('toggle')
 toggle.addEventListener('click', function() {
     militaryTime = !militaryTime;
     });
+
 
 
