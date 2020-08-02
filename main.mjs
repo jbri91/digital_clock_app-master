@@ -17,9 +17,7 @@ function increment() {
     let beforeNoon = 'AM'
     let afterNoon = 'PM'
     
-    // if (hours < 10 || hours < 22 && hours > 12) {
-    //     hours = '0' + hours;
-    // }
+// Conditions for Seconds, Minutes, Hours, AM, PM
     if (minutes < 10) {
         minutes = '0' + minutes;
     }
