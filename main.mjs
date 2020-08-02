@@ -3,9 +3,8 @@ militaryTime = false;
 var today = new Date();
 
 
-
 // // Sets the date\
-var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+var date = (today.getMonth() + 1) + '/' + ('0' + today.getDate()) + '/' + today.getFullYear();
 document.getElementById('current_date').innerHTML = date;
 
 
@@ -15,15 +14,12 @@ function increment() {
     let hours = today.getHours();
     let minutes = today.getMinutes();
     let seconds = today.getSeconds();
+    let beforeNoon = 'AM'
+    let afterNoon = 'PM'
     
-
-
-    if (hours < 10) {
-        hours = '0' + hours;
-    }
-    if (hours == 0) {
-        hours = 12;                
-    }
+    // if (hours < 10 || hours < 22 && hours > 12) {
+    //     hours = '0' + hours;
+    // }
     if (minutes < 10) {
         minutes = '0' + minutes;
     }
@@ -34,17 +30,33 @@ function increment() {
         time = hours + ":" + minutes + ":" + seconds;
         document.getElementById('current_time').innerHTML = time;
     }
-    else {
-        if (hours > 12) {
+    else { 
+        if (hours >= 12 && hours < 24 && hours > 12) {
             hours = hours - 12
+            time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
+            document.getElementById('current_time').innerHTML = time;
+            }
+            else if (hours == 12) {
+            time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
+            document.getElementById('current_time').innerHTML = time;
+            }
+            else if (hours > 12 && hours < 24) {
+            hours = hours - 12
+            time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
+            document.getElementById('current_time').innerHTML = time;
         }
-        time = (hours) + ":" + minutes + ":" + seconds;
-        document.getElementById('current_time').innerHTML = time;
-    } 
-
+        else {
+            if (hours >= 24) {
+            hours = hours - 12;
+            time = (hours) + ":" + minutes + ":" + seconds + ' ' + beforeNoon;
+            document.getElementById('current_time').innerHTML = time;
+            }
+            else if (hours < 12)
+            time = (hours) + ":" + minutes + ":" + seconds + ' ' + beforeNoon;
+            document.getElementById('current_time').innerHTML = time;
+            }
+        }
 }
-
-
 // // Sets the interval at 1000 ms
 setInterval(increment, 1000);
 
@@ -55,6 +67,4 @@ const toggle = document.getElementById('toggle')
 toggle.addEventListener('click', function () {
     militaryTime = !militaryTime;
 });
-
-
 
