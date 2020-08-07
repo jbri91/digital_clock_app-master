@@ -2,52 +2,67 @@
 
 /* I wanted to practice commenting. I figured out how to make the background color black using external CSS! */
 
-
 body {
-    background-color: black;
-    
+  background-color: black;
 }
 
 header {
-    border: solid red 10px;
+  border: solid red 10px;
+}
+
+header h1 {
+  color: white;
+  font-size: 5pc;
+  text-align: center;
+}
+
+header h2 {
+  color: white;
+  text-align: center;
 }
 
 .clock {
-    margin:100px auto;
-    background-color: black;
-    text-align: center;
-    font-size:50px;
-    display:flex;
-    color: white;
-    font-style: italic;
+  margin: 100px auto;
+  background-color: black;
+  text-align: center;
+  font-size: 50px;
+  display: flex;
+  color: white;
+  font-style: italic;
+}
+
+.current_date {
+  text-align: center;
+}
+
+.current_time {
+  text-align: center;
 }
 
 .date {
-    border: solid red 10px;
-    margin: 0 0 0 auto;
-    padding: 0px 20px;
-
+  border: solid red 10px;
+  margin: 0 0 0 auto;
+  padding: 0px 20px;
 }
 
 .time {
-     border: solid red 10px;
-     margin: 0 auto 0 0;
-     padding: 0px 20px;
+  border: solid red 10px;
+  margin: 0 auto 0 0;
+  padding: 0px 20px;
 }
 
 .settings {
-    color: white;  
+  color: white;
 }
 
 .options {
-    display:flex;
-    margin:100px 300px;
+  display: flex;
+  margin: 100px 300px;
 }
 
 .option {
- border: red solid 10px; 
- text-align: center;
- padding: 0 20px; 
- margin: 0 auto;
-}  
-
+  border: red solid 10px;
+  text-align: center;
+  padding: 0 20px;
+  margin: 0 auto;
+}

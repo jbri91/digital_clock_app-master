@@ -5,7 +5,7 @@ var today = new Date();
 
 // // Sets the date\
 var date = (today.getMonth() + 1) + '/' + ('0' + today.getDate()) + '/' + today.getFullYear();
-document.getElementById('current_date').innerHTML = date;
+document.getElementById('current-date').innerHTML = date;
 
 
 
@@ -26,32 +26,32 @@ function increment() {
     }
     if (militaryTime == true) {
         time = hours + ":" + minutes + ":" + seconds;
-        document.getElementById('current_time').innerHTML = time;
+        document.getElementById('current-time').innerHTML = time;
     }
     else { 
         if (hours >= 12 && hours < 24 && hours > 12) {
             hours = hours - 12
             time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
-            document.getElementById('current_time').innerHTML = time;
+            document.getElementById('current-time').innerHTML = time;
             }
             else if (hours == 12) {
             time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
-            document.getElementById('current_time').innerHTML = time;
+            document.getElementById('current-time').innerHTML = time;
             }
             else if (hours > 12 && hours < 24) {
             hours = hours - 12
             time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
-            document.getElementById('current_time').innerHTML = time;
+            document.getElementById('current-time').innerHTML = time;
         }
         else {
             if (hours >= 24) {
             hours = hours - 12;
             time = (hours) + ":" + minutes + ":" + seconds + ' ' + beforeNoon;
-            document.getElementById('current_time').innerHTML = time;
+            document.getElementById('current-time').innerHTML = time;
             }
             else if (hours < 12)
             time = (hours) + ":" + minutes + ":" + seconds + ' ' + beforeNoon;
-            document.getElementById('current_time').innerHTML = time;
+            document.getElementById('current-time').innerHTML = time;
             }
         }
 }

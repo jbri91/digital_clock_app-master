@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html>
+  <!-- Just create something! Figure it out as you go! You can not figure it out with a blank page.... Just saying... -->
 
-<!-- Just create something! Figure it out as you go! You can not figure it out with a blank page.... Just saying... -->
-
-<head>
+  <head>
     <title>Digital Clock App</title>
-<link href = style.css rel='stylesheet'>
-</head>
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <header>
-    <h1 style = 'color: white; font-size: 5pc; text-align:center'>Digital Clock App
-    </h1>
+      <h1>
+        Digital Clock App
+      </h1>
 
-    <h1 style = 'color: white; text-align: center;'> By Johnny Briones Jr.</h1>
-   </header>
+      <h2>By Johnny Briones Jr.</h2>
+    </header>
 
-   <div class= 'clock'>
-       <div class= 'date'>
-        <p id = 'current_date'; style = 'text-align:center;'> Saturday - July 25 </p>
-         </div>
+    <div class="clock">
+      <div class="date">
+        <p id="current-date";>
+          Saturday - July 25
+        </p>
+      </div>
 
-            <div class= 'time'>
-             <p id = 'current_time'; style = 'text-align:center;'>00:00:00</p>
-                </div>
+      <div class="time">
+        <p id="current-time";>00:00:00</p>
+      </div>
+    </div>
 
-                  </div>
+    <div class="settings">
+      <div class="options">
+        <div class="option">
+          <h2>
+            <button class="btn btn-dark btn-black" value="10" id="toggle">
+              Toggle For 12/24 Hour Display
+            </button>
+          </h2>
+        </div>
+      </div>
+    </div>
 
-                    <div class = 'settings'>
-                        <div class= 'options'>
-
-                            <div class= 'option'>
-                                <h2>
-                                    <button class='btn btn-dark btn-black' value='10' 
-                                    id='toggle'>Toggle For 12/24 Hour Display</button>
-                                </h2>
-                            </div>
-               
-
-                        </div>          
-
-
-<script src= 'main.mjs'></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
