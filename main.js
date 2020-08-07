@@ -1,68 +1,51 @@
-// // Global Variable
+
 militaryTime = false;
-var today = new Date();
+const today = new Date();
 
+const options = {
+    year: 'numeric',
+    month: 'numeric',
+    day: '2-digit',
+}
 
-// // Sets the date\
-var date = (today.getMonth() + 1) + '/' + ('0' + today.getDate()) + '/' + today.getFullYear();
-document.getElementById('current-date').innerHTML = date;
-
-
+const date = document.getElementById('current-date');
+date.textContent=today.toLocaleString('en-us', options);
 
 function increment() {
-    let today = new Date();
-    let hours = today.getHours();
-    let minutes = today.getMinutes();
-    let seconds = today.getSeconds();
-    let beforeNoon = 'AM'
-    let afterNoon = 'PM'
-    
-// Conditions for Seconds, Minutes, Hours, AM, PM
-    if (minutes < 10) {
-        minutes = '0' + minutes;
-    }
-    if (seconds < 10) {
-        seconds = '0' + seconds;
-    }
-    if (militaryTime == true) {
-        time = hours + ":" + minutes + ":" + seconds;
-        document.getElementById('current-time').innerHTML = time;
-    }
-    else { 
-        if (hours >= 12 && hours < 24 && hours > 12) {
-            hours = hours - 12
-            time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
-            document.getElementById('current-time').innerHTML = time;
-            }
-            else if (hours == 12) {
-            time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
-            document.getElementById('current-time').innerHTML = time;
-            }
-            else if (hours > 12 && hours < 24) {
-            hours = hours - 12
-            time = (hours) + ":" + minutes + ":" + seconds + ' ' + afterNoon;
-            document.getElementById('current-time').innerHTML = time;
-        }
-        else {
-            if (hours >= 24) {
-            hours = hours - 12;
-            time = (hours) + ":" + minutes + ":" + seconds + ' ' + beforeNoon;
-            document.getElementById('current-time').innerHTML = time;
-            }
-            else if (hours < 12)
-            time = (hours) + ":" + minutes + ":" + seconds + ' ' + beforeNoon;
-            document.getElementById('current-time').innerHTML = time;
-            }
-        }
+  let currentTime = document.getElementById('current-time');
+  let today = new Date();
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
+  let meridiem;
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  meridiem = hours >= 12 ? 'PM' : 'AM';
+
+  if (militaryTime == true) {
+    time = `${hours}:${minutes}:${seconds}`;
+    currentTime.innerHTML = time;
+  } else {
+    hours = hours > 12 ? hours - 12: hours;
+    currentTime.textContent = `${hours}:${minutes}:${seconds} ${meridiem}`;
+  }
 }
-// // Sets the interval at 1000 ms
-setInterval(increment, 1000);
+
+
 
 // // Links to HTML button file
-const toggle = document.getElementById('toggle')
+const toggle = document.getElementById("toggle");
 
 // // This is toggling the on and off for military vs standard time
-toggle.addEventListener('click', function () {
-    militaryTime = !militaryTime;
+toggle.addEventListener("click", function () {
+  setInterval(increment, 1000);
+  militaryTime = !militaryTime;
 });
 
+setInterval(increment, 1000);
