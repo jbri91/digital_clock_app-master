@@ -1,4 +1,4 @@
-# Digitial Clock App
+# Digital Clock App
 
 Digital Clock Application created using HTML, CSS and JavaScript
 
