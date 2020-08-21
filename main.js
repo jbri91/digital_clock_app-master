@@ -19,15 +19,20 @@ function increment() {
   let seconds = today.getSeconds();
   let meridiem;
 
+  if (hours === 0) {
+    hours = 12;
+  }
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
+  
 
-  meridiem = hours >= 12 ? 'PM' : 'AM';
+  meridiem = hours > 12 ? 'PM' : 'AM';
 
+  
   if (militaryTime == true) {
     time = `${hours}:${minutes}:${seconds}`;
     currentTime.innerHTML = time;
