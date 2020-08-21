@@ -4,7 +4,7 @@ Digital Clock Application created using HTML, CSS and JavaScript
 
 Check the time [here](https://jbri91.github.io/digital_clock_app-master/)
 
-![Digital Clock Application]()
+![Digital Clock Application](https://github.com/jbri91/digital_clock_app-master/blob/master/Digital%20Clock%20App.png?raw=true)
 
 
 
