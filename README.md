@@ -6,7 +6,23 @@ Check the time [here](https://jbri91.github.io/digital_clock_app-master/)
 
 ![Digital Clock Application](https://github.com/jbri91/digital_clock_app-master/blob/master/Digital%20Clock%20App.png?raw=true)
 
+*(Screenshot above reflects the original design — see "About this branch" below for what's changed visually since.)*
 
+## Running it locally
+
+No build step, no dependencies — just static HTML/CSS/JS.
+
+- Simplest: double-click [index.html](index.html) to open it directly in a browser.
+- Nicer for editing: install the "Live Server" VS Code extension, right-click [index.html](index.html) → "Open with Live Server" to get auto-reload on save.
+
+## About this branch (`ai-assisted`)
+
+This branch is where the project is being revived with [Claude Code](https://claude.com/claude-code)'s help — `master` stays untouched as the original 2020 version. Changes made so far:
+
+- **Fixed several longstanding bugs**: incorrect AM/PM at noon, incorrect midnight display in 24-hour mode, a date display that froze at page load, redundant timers stacking on every toggle click, and an accidental global variable. Full details in [CODE_WALKTHROUGH.md](CODE_WALKTHROUGH.md).
+- **Added tests**: [test-manual.html](test-manual.html) runs the time-formatting logic against the specific edge cases that were previously broken (noon, midnight, both display modes) and shows PASS/FAIL on screen.
+- **Refreshed the visual design**: real typography (`Share Tech Mono` + `Poppins` via Google Fonts), consistent spacing and colors via CSS custom properties, rounded corners with a soft glow, and a properly functioning toggle button (it previously referenced Bootstrap classes that did nothing, since Bootstrap was never loaded).
+- **Documented how the app works**: see [CODE_WALKTHROUGH.md](CODE_WALKTHROUGH.md) for a full file-by-file explanation of how the HTML, CSS, and JS connect.
 
 # Summary
 
