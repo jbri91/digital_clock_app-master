@@ -22,6 +22,7 @@ const toggle = document.getElementById("toggle");
 // Toggles between military (24hr) and standard (12hr) time
 toggle.addEventListener("click", function () {
   militaryTime = !militaryTime;
+  increment();
 });
 
 setInterval(increment, 1000);
