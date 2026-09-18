@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>formatTime - Manual Tests</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #eee; padding: 20px; }
+    .pass { color: #4caf50; }
+    .fail { color: #f44336; }
+    .case { margin-bottom: 6px; }
+    h1 { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>formatTime() manual test results</h1>
+  <div id="results"></div>
+
+  <script src="format-time.js"></script>
+  <script>
+    // [rawHours, minutes, seconds, militaryTime, expected]
+    const cases = [
+      [0, 0, 0, false, "12:00:00 AM"],   // midnight, standard
+      [11, 59, 59, false, "11:59:59 AM"],
+      [12, 0, 0, false, "12:00:00 PM"],  // noon, standard - the bug we fixed
+      [13, 5, 9, false, "1:05:09 PM"],
+      [23, 59, 59, false, "11:59:59 PM"],
+
+      [0, 0, 0, true, "00:00:00"],       // midnight, military - the other bug we fixed
+      [12, 0, 0, true, "12:00:00"],      // noon, military
+      [9, 5, 9, true, "09:05:09"],
+      [23, 59, 59, true, "23:59:59"],
+    ];
+
+    const results = document.getElementById('results');
+    let passCount = 0;
+
+    cases.forEach(([rawHours, minutes, seconds, militaryTime, expected]) => {
+      const actual = formatTime(rawHours, minutes, seconds, militaryTime);
+      const passed = actual === expected;
+      if (passed) passCount++;
+
+      const line = document.createElement('div');
+      line.className = 'case';
+      const label = `formatTime(${rawHours}, ${minutes}, ${seconds}, ${militaryTime})`;
+      line.innerHTML = passed
+        ? `<span class="pass">PASS</span> ${label} → "${actual}"`
+        : `<span class="fail">FAIL</span> ${label} → got "${actual}", expected "${expected}"`;
+      results.appendChild(line);
+    });
+
+    const summary = document.createElement('div');
+    summary.style.marginTop = '12px';
+    summary.textContent = `${passCount} / ${cases.length} passed`;
+    results.appendChild(summary);
+  </script>
+</body>
+</html>
