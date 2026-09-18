@@ -8,7 +8,7 @@ function formatTime(rawHours, minutes, seconds, militaryTime) {
   const paddedSeconds = pad(seconds);
 
   if (militaryTime) {
-    const hours = String(rawHours).padStart(2, '0');
+    const hours = pad(rawHours);
     return `${hours}:${paddedMinutes}:${paddedSeconds}`;
   }
 
