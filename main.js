@@ -1,56 +1,28 @@
 
-militaryTime = false;
-const today = new Date();
+let militaryTime = false;
 
-const options = {
+const dateOptions = {
     year: 'numeric',
     month: 'numeric',
     day: '2-digit',
 }
 
-const date = document.getElementById('current-date');
-date.textContent=today.toLocaleString('en-us', options);
+const dateEl = document.getElementById('current-date');
+const currentTime = document.getElementById('current-time');
 
 function increment() {
-  let currentTime = document.getElementById('current-time');
-  let today = new Date();
-  let hours = today.getHours();
-  let minutes = today.getMinutes();
-  let seconds = today.getSeconds();
-  let meridiem;
-
-  if (hours === 0) {
-    hours = 12;
-  }
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-  
-
-  meridiem = hours > 12 ? 'PM' : 'AM';
-
-  
-  if (militaryTime == true) {
-    time = `${hours}:${minutes}:${seconds}`;
-    currentTime.innerHTML = time;
-  } else {
-    hours = hours > 12 ? hours - 12: hours;
-    currentTime.textContent = `${hours}:${minutes}:${seconds} ${meridiem}`;
-  }
+  const now = new Date();
+  dateEl.textContent = now.toLocaleString('en-us', dateOptions);
+  currentTime.textContent = formatTime(now.getHours(), now.getMinutes(), now.getSeconds(), militaryTime);
 }
 
-
-
-// // Links to HTML button file
+// Links to HTML button file
 const toggle = document.getElementById("toggle");
 
-// // This is toggling the on and off for military vs standard time
+// Toggles between military (24hr) and standard (12hr) time
 toggle.addEventListener("click", function () {
-  setInterval(increment, 1000);
   militaryTime = !militaryTime;
 });
 
 setInterval(increment, 1000);
+increment();
