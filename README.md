@@ -3,10 +3,13 @@
 Digital Clock Application created using HTML, CSS and JavaScript
 
 Check the time [here](https://jbri91.github.io/digital_clock_app-master/)
+*(live demo is deployed from `master`, so it currently shows the original 2020 design — see the "after" screenshot below for what's on this branch)*
 
-![Digital Clock Application](https://github.com/jbri91/digital_clock_app-master/blob/master/Digital%20Clock%20App.png?raw=true)
+## Before / After
 
-*(Screenshot above reflects the original design — see "About this branch" below for what's changed visually since.)*
+| Original (2020) | With Claude Code (`ai-assisted` branch) |
+|---|---|
+| ![Original design](https://github.com/jbri91/digital_clock_app-master/blob/master/Digital%20Clock%20App.png?raw=true) | ![Redesigned with Claude Code](screenshots/after-ai-assisted.png) |
 
 ## Running it locally
 
